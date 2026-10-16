@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Happy Birthday, Chimobi! 🎉</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<style>
+:root{--navy:#071b46;--blue:#124eaa;--bright:#398bff;--sky:#d9ecff;--gold:#ffd166;--white:#fff}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;font-family:"DM Sans",sans-serif;color:white;background:radial-gradient(ellipse at 20% 15%,#1d67c5 0,transparent 35%),radial-gradient(ellipse at 85% 80%,#103b85 0,transparent 35%),linear-gradient(135deg,#061536,#0b2d69 55%,#061536);overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.13;background-image:radial-gradient(#fff 1px,transparent 1px);background-size:27px 27px}
+main{width:min(100%,1050px);margin:auto;padding:38px 20px 50px;position:relative}
+.topline{display:flex;justify-content:center;align-items:center;gap:10px;color:#cfe5ff;font-size:.78rem;letter-spacing:.18em;text-transform:uppercase}
+h1{font-family:"Playfair Display",serif;text-align:center;font-size:clamp(2.6rem,7vw,5rem);line-height:1.05;margin:17px 0 10px;text-shadow:0 5px 25px #0004}
+h1 span{color:var(--gold)}
+.subtitle{text-align:center;color:#d5e7ff;margin:0 auto 27px;max-width:550px;line-height:1.7}
+.timer{display:flex;justify-content:center;gap:10px;margin:0 auto 32px}
+.timebox{background:#ffffff12;border:1px solid #ffffff2c;border-radius:14px;padding:11px 16px;min-width:72px;text-align:center;backdrop-filter:blur(8px)}
+.timebox strong{display:block;font-size:1.55rem;font-variant-numeric:tabular-nums}
+.timebox small{color:#bdd9ff;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase}
+.card-wrap{perspective:1400px;width:min(100%,450px);height:430px;margin:0 auto;cursor:pointer;outline:none}
+.flip-card{height:100%;width:100%;position:relative;transform-style:preserve-3d;transition:transform .8s cubic-bezier(.2,.75,.2,1)}
+.card-wrap.flipped .flip-card{transform:rotateY(180deg)}
+.face{position:absolute;inset:0;backface-visibility:hidden;border-radius:28px;overflow:hidden;box-shadow:0 25px 65px #0005;border:1px solid #ffffff5c}
+.front{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:30px;background:linear-gradient(145deg,#2f8bff,#1450b2 58%,#092e73)}
+.front:before,.front:after{content:"";position:absolute;border:1px solid #ffffff30;border-radius:50%;width:280px;height:280px;top:-140px;right:-90px}
+.front:after{width:220px;height:220px;top:auto;right:auto;bottom:-115px;left:-80px}
+.front .birthday-icon{font-size:3.6rem;color:var(--gold);margin-bottom:20px;filter:drop-shadow(0 8px 12px #06153655)}
+.front h2{font-family:"Playfair Display",serif;font-size:2.4rem;margin:0 0 13px}
+.front p{color:#e4f1ff;line-height:1.65;margin:0}
+.flip-hint{margin-top:27px;padding:11px 17px;border:1px solid #ffffff60;border-radius:99px;font-size:.85rem;background:#ffffff15}
+.flip-hint i{margin-left:8px}
+.back{transform:rotateY(180deg);background:linear-gradient(150deg,#f4f9ff,#d6eaff);color:#092b66;padding:27px 28px;display:flex;flex-direction:column;justify-content:center;text-align:center}
+.back .tiny{color:#2368bd;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;font-weight:700}
+.back h2{font-family:"Playfair Display",serif;font-size:2rem;margin:9px 0 12px;color:#0d4596}
+.back p{font-size:.9rem;line-height:1.6;margin:7px 0}
+.back .verse{background:#fff9;border-left:3px solid #398bff;border-radius:10px;padding:11px 13px;margin-top:12px;font-style:italic}
+.back .verse b{display:block;font-style:normal;color:#1559ad;margin-top:6px;font-size:.78rem}
+.back .signature{font-weight:700;color:#1559ad;margin-top:12px}
+.instruction{text-align:center;color:#bcd9ff;font-size:.83rem;margin:18px 0 0}
+.footer{text-align:center;color:#9fc4f4;font-size:.75rem;margin-top:35px}
+.footer i{color:#ff9bb2}
+.confetti{position:fixed;inset:0;pointer-events:none;z-index:8;overflow:hidden}
+.confetti span{position:absolute;top:-15px;width:9px;height:14px;border-radius:2px;animation:fall linear forwards}
+@keyframes fall{to{transform:translateY(110vh) rotate(760deg);opacity:.8}}
+.modal-overlay{position:fixed;inset:0;background:#020b20b8;display:grid;place-items:center;padding:20px;z-index:10;backdrop-filter:blur(7px)}
+.modal{position:relative;max-width:520px;width:100%;border-radius:25px;text-align:center;padding:34px 26px;background:linear-gradient(145deg,#1672d9,#082d75);border:1px solid #ffffff55;box-shadow:0 30px 90px #0008;animation:pop .55s cubic-bezier(.2,.9,.3,1.3)}
+@keyframes pop{from{transform:scale(.65) translateY(25px);opacity:0}to{transform:scale(1);opacity:1}}
+.modal .party{font-size:2.8rem;margin-bottom:12px}
+.modal h2{font-family:"Playfair Display",serif;font-size:clamp(1.6rem,5vw,2.2rem);line-height:1.2;margin:0 0 13px;color:#fff}
+.modal p{color:#d8eaff;line-height:1.65;margin:0 0 22px}
+button{font:inherit;border:0;cursor:pointer}
+.primary{background:var(--gold);color:#17315c;padding:13px 22px;border-radius:99px;font-weight:700;box-shadow:0 7px 18px #001b4c40}
+.primary:hover{transform:translateY(-2px)}
+.close{position:absolute;right:15px;top:13px;width:35px;height:35px;border-radius:50%;background:#ffffff20;color:white;font-size:1.1rem}
+@media(max-width:520px){main{padding:27px 15px 35px}.card-wrap{height:455px}.back{padding:23px 20px}.back p{font-size:.84rem}.timebox{min-width:62px;padding:9px 11px}.timebox strong{font-size:1.3rem}.modal{padding:31px 22px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+</style>
+</head>
+<body>
+<div class="confetti" id="confetti" aria-hidden="true"></div>
+<div class="modal-overlay" id="surprise" role="dialog" aria-modal="true" aria-labelledby="popup-title">
+  <div class="modal">
+    <button class="close" id="closePopup" aria-label="Close surprise"><i class="fa-solid fa-xmark"></i></button>
+    <div class="party">🎉🎂🥳</div>
+    <h2 id="popup-title">HAPPY BIRTHDAY CUHZ CHIMOBI!</h2>
+    <p>FLIP THE CARD FOR THE PRAYERS AND WISHES 💙✨</p>
+    <button class="primary" id="startSurprise">Let the celebration begin! <i class="fa-solid fa-wand-magic-sparkles"></i></button>
+  </div>
+</div>
+<main>
+  <div class="topline"><i class="fa-solid fa-sparkles"></i> A special day for someone special <i class="fa-solid fa-sparkles"></i></div>
+  <h1>Happy Birthday,<br><span>Chimobi!</span> 🎂</h1>
+  <p class="subtitle">A little card filled with big love, heartfelt prayers, and blessings for your new year. 💙</p>
+
+  <div class="timer" aria-label="Countdown to midnight">
+    <div class="timebox"><strong id="hours">00</strong><small>Hours</small></div>
+    <div class="timebox"><strong id="minutes">00</strong><small>Minutes</small></div>
+    <div class="timebox"><strong id="seconds">00</strong><small>Seconds</small></div>
+  </div>
+
+  <div class="card-wrap" id="card" role="button" tabindex="0" aria-label="Flip birthday card to reveal wishes">
+    <div class="flip-card">
+      <section class="face front">
+        <div class="birthday-icon"><i class="fa-solid fa-gift"></i></div>
+        <h2>For You, Chimobi</h2>
+        <p>A birthday surprise is waiting<br>on the other side…</p>
+        <div class="flip-hint">Flip for birthday wishes <i class="fa-solid fa-arrow-rotate-right"></i></div>
+        <div style="position:absolute;bottom:17px;font-size:1.2rem">✨ 💙 🎈</div>
+      </section>
+      <section class="face back" aria-label="Birthday wishes and prayer">
+        <div class="tiny">With love & prayers</div>
+        <h2>Happy Birthday, Cuhz! 🎉</h2>
+        <p>May this new chapter bring you overflowing joy, good health, wisdom, favour, and beautiful opportunities. May God guide every step you take, strengthen you when life gets tough, and fill your heart with peace. May your dreams blossom and your days be surrounded by genuine love and laughter. 🙏💙</p>
+        <div class="verse">“The Lord bless thee, and keep thee: The Lord make his face shine upon thee, and be gracious unto thee.”<b>— Numbers 6:24–25 (KJV)</b></div>
+        <p class="signature">May God’s goodness follow you always. Amen! 🙌</p>
+        <div style="margin-top:8px;color:#2368bd">🎂 🎁 🥳 ✨</div>
+      </section>
+    </div>
+  </div>
+  <p class="instruction"><i class="fa-regular fa-hand-pointer"></i> Tap or click the card to flip it. Tap again to return.</p>
+  <div class="footer">Made with 💙 just for CHIMOBI</div>
+</main>
+<script>
+const card=document.getElementById('card');
+function flip(){card.classList.toggle('flipped')}
+card.addEventListener('click',flip);
+card.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();flip()}});
+const overlay=document.getElementById('surprise');
+function closeModal(){overlay.style.display='none'}
+document.getElementById('closePopup').addEventListener('click',closeModal);
+document.getElementById('startSurprise').addEventListener('click',()=>{closeModal();burstConfetti();card.classList.add('flipped')});
+function burstConfetti(){
+ const host=document.getElementById('confetti');
+ const colors=['#ffd166','#7ec8ff','#ffffff','#ff7aa2','#8be9b0','#b9a1ff'];
+ for(let i=0;i<115;i++){
+  const piece=document.createElement('span');
+  piece.style.left=Math.random()*100+'%';
+  piece.style.background=colors[Math.floor(Math.random()*colors.length)];
+  piece.style.animationDuration=(2.4+Math.random()*3.5)+'s';
+  piece.style.animationDelay=(Math.random()*.8)+'s';
+  piece.style.transform='rotate('+Math.random()*360+'deg)';
+  host.appendChild(piece);
+  setTimeout(()=>piece.remove(),6500);
+ }
+}
+burstConfetti();
+// Countdown to the next midnight in the visitor's local time.
+function updateCountdown(){
+ const now=new Date();
+ const midnight=new Date(now);
+ midnight.setHours(24,0,0,0);
+ let diff=Math.max(0,midnight-now);
+ const h=Math.floor(diff/3600000),m=Math.floor((diff%3600000)/60000),s=Math.floor((diff%60000)/1000);
+ document.getElementById('hours').textContent=String(h).padStart(2,'0');
+ document.getElementById('minutes').textContent=String(m).padStart(2,'0');
+ document.getElementById('seconds').textContent=String(s).padStart(2,'0');
+}
+updateCountdown();setInterval(updateCountdown,1000);
+</script>
+</body>
+</html>
